@@ -1,2 +1,10 @@
 __pycache__/
 *.pyc
+
+# Generated artefacts (run `make` to rebuild)
+glyphs.txt
+missing.txt
+glyphs-extras.txt
+Ohlfs-Bold.otf
+Ohlfs-Extra.otf
+Ohlfs-Extra-Bold.otf

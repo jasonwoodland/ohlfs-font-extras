@@ -30,7 +30,7 @@ INSTALLED := $(FONT_DIR)/Ohlfs-Bold.otf \
              $(FONT_DIR)/Ohlfs-Extra.otf \
              $(FONT_DIR)/Ohlfs-Extra-Bold.otf
 
-.PHONY: all sources glyphs bold extra install uninstall clean verify reload help
+.PHONY: all sources glyphs bold extra install uninstall clean verify help
 
 all: sources bold extra
 
@@ -82,9 +82,6 @@ verify:
 	       'weight=', TTFont(p)['OS/2'].usWeightClass, \
 	       'glyphs=', TTFont(p)['maxp'].numGlyphs) \
 	 for p in ['$(BOLD_OTF)', '$(EXTRA_OTF)', '$(EXTRA_BOLD_OTF)']]"
-
-reload:
-	@echo "In Ghostty: ⌘⇧, to reload config (or quit & relaunch)."
 
 # ----- Cleanup ------------------------------------------------------------
 
