@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-OUT = Path("/Users/jason/Developer/ohlfs-bold/glyphs-extras.txt")
+OUT = Path(__file__).resolve().parent / "glyphs-extras.txt"
 
 ROW_LABELS = {
     12: "  ; y=12 (top, above ascent)",
@@ -623,13 +623,13 @@ GLYPHS: list[tuple[str, int, list[str]]] = [
     ("checkmark", 0x2714, [  # ✔
         "........",  # y=11
         "........",  # y=10
-        ".......#",  # y=9   tip top-right
-        "......##",  # y=8
-        ".....##.",  # y=7
-        "##..##..",  # y=6   left stroke top + right stroke mid
-        ".####...",  # y=5
-        "..##....",  # y=4   V bottom (intersection)
-        "........",  # y=3
+        "........",  # y=9   tip top-right
+        "........",  # y=8
+        "......##",  # y=7
+        ".....##.",  # y=6   left stroke top + right stroke mid
+        "##..##..",  # y=5
+        ".####...",  # y=4   V bottom (intersection)
+        "..##....",  # y=3
         "........",  # y=2
         "........",  # y=1
         "........",  # y=0
@@ -641,12 +641,12 @@ GLYPHS: list[tuple[str, int, list[str]]] = [
         "........",  # y=11
         "........",  # y=10
         "........",  # y=9
-        "..####..",  # y=8   cols 2-5
-        "..####..",  # y=7
-        "..####..",  # y=6
-        "..####..",  # y=5
-        "..####..",  # y=4
-        "..####..",  # y=3
+        "........",  # y=8   cols 2-5
+        ".#####..",  # y=7
+        ".#####..",  # y=6
+        ".#####..",  # y=5
+        ".#####..",  # y=4
+        ".#####..",  # y=3
         "........",  # y=2
         "........",  # y=1
         "........",  # y=0
@@ -658,12 +658,12 @@ GLYPHS: list[tuple[str, int, list[str]]] = [
         "........",  # y=11
         "........",  # y=10
         "........",  # y=9
-        "..####..",  # y=8
-        "..#..#..",  # y=7
-        "..#..#..",  # y=6
-        "..#..#..",  # y=5
-        "..#..#..",  # y=4
-        "..####..",  # y=3
+        "........",  # y=8
+        ".#####..",  # y=7
+        ".#...#..",  # y=6
+        ".#...#..",  # y=5
+        ".#...#..",  # y=4
+        ".#####..",  # y=3
         "........",  # y=2
         "........",  # y=1
         "........",  # y=0

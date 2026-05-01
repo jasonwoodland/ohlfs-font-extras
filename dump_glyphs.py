@@ -28,8 +28,8 @@ COL_MIN, COL_MAX = -1, 9            # 11 cols (Light advance is 8px → cols 0..
 ROW_MIN, ROW_MAX = -3, 12           # 16 rows
 DEFAULT_ADV = 800                   # Light cell width
 SRC = Path("/Users/jason/Library/Fonts/Ohlfs-Light.otf")
-OUT = Path("/Users/jason/Developer/ohlfs-bold/glyphs.txt")
-MISSING_OUT = Path("/Users/jason/Developer/ohlfs-bold/missing.txt")
+OUT = Path(__file__).resolve().parent / "glyphs.txt"
+MISSING_OUT = Path(__file__).resolve().parent / "missing.txt"
 
 
 def extract_subpaths(charstring):

@@ -30,7 +30,7 @@ from make_bold import (
     update_cff_top,
 )
 
-ROOT = Path("/Users/jason/Developer/ohlfs-bold")
+ROOT = Path(__file__).resolve().parent
 SRC = Path("/Users/jason/Library/Fonts/Ohlfs-Light.otf")
 EXTRA_FILES = [
     ROOT / "glyphs-extras.txt",   # all hand-designed extras

@@ -18,7 +18,7 @@ PIXEL = 100  # font units per pixel
 SHIFT = PIXEL  # bold smear: 1 pixel to the right
 
 SRC = Path("/Users/jason/Library/Fonts/Ohlfs-Light.otf")
-DST = Path("/Users/jason/Developer/ohlfs-bold/Ohlfs-Bold.otf")
+DST = Path(__file__).resolve().parent / "Ohlfs-Bold.otf"
 
 
 def extract_subpaths(charstring) -> list[list[tuple[int, int]]]:
