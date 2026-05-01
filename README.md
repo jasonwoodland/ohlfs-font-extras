@@ -31,6 +31,8 @@ make install
 
 ## Scripts
 
+| File | Description |
+| -------------- | ------------------------------------------------------- |
 | `make_bold.py` | Light → Bold via 1-px smear; importable for other faces |
 | `gen_extras.py` | Hand-designed glyph definitions → `glyphs-extras.txt` |
 | `dump_glyphs.py` | Inspect existing font: glyph dump + coverage report |
