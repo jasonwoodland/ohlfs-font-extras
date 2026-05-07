@@ -1,8 +1,10 @@
 # ohlfs-font-extras
 
-![Ohlfs Extra in a Terminal session](preview.png)
-
 Ohlfs is a bitmap font designed by [Keith Ohlfs](https://worldwideweb.cern.ch/typography/) for the NeXSTEP operating system. This repository includes tooling to add extra glyphs to the font and a bold version. Full credit goes to [Alex Horovitz](https://github.com/AlexHorovitz/Ohlfs-font-to-ttf-conversion) for his preservation and conversion efforts.
+
+<p align="center">
+  <img src="preview.png" width="776" alt="Ohlfs Extra in a Terminal session">
+</p>
 
 ## Requirements
 
