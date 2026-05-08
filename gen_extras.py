@@ -671,6 +671,40 @@ GLYPHS: list[tuple[str, int, list[str]]] = [
         "........",  # y=-2
         "........",  # y=-3
     ]),
+    ("lightcheckmark", 0x2713, [  # ✓
+        "........",  # y=11
+        "........",  # y=10
+        "........",  # y=9
+        "........",  # y=8
+        "........",  # y=7
+        ".......#",  # y=6   tip top-right
+        "......#.",  # y=5
+        ".....#..",  # y=4
+        "#...#...",  # y=3   left stroke top + right stroke continuing
+        ".#.#....",  # y=2
+        "..#.....",  # y=1   V bottom
+        "........",  # y=0
+        "........",  # y=-1
+        "........",  # y=-2
+        "........",  # y=-3
+    ]),
+    ("warningsign", 0x26A0, [  # ⚠
+        "........",  # y=11
+        "...#....",  # y=10  apex
+        "..###...",  # y=9   apex shoulders
+        "..###...",  # y=8   triangle outline
+        ".##.##..",  # y=7   outline + exclam stem top
+        ".##.##..",  # y=6   outline + exclam stem
+        ".##.##..",  # y=5   outline + exclam stem
+        "###.###.",  # y=4   outline only (gap)
+        "#######.",  # y=3   outline + exclam dot
+        "###.###.",  # y=2   outline only
+        "#######.",  # y=1   base
+        "........",  # y=0
+        "........",  # y=-1
+        "........",  # y=-2
+        "........",  # y=-3
+    ]),
     ("ballotbox", 0x2610, [  # ☐
         "........",  # y=11
         "........",  # y=10
