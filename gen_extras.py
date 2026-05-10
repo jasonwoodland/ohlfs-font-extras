@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate `glyphs-extras.txt` — every hand-designed glyph for the Ohlfs
-Extra family. Covers arrows, geometric shapes, block elements, modifier keys,
-media controls, and prompt/marker symbols missing from Ohlfs-Light.
+Extra family. Covers arrows, Greek/math symbols, geometric shapes, block elements,
+modifier keys, media controls, and prompt/marker symbols missing from Ohlfs-Light.
 
 Each glyph is defined as 15 rows of 8 chars (cols 0..7, top y=11 down to y=-3).
 The output is padded to the canonical 11-col × 16-row grid (cols -1..9, rows
@@ -352,6 +352,144 @@ GLYPHS: list[tuple[str, int, list[str]]] = [
         "..###...",  # y=3
         "........",  # y=2
         "........",  # y=1
+        "........",  # y=0
+        "........",  # y=-1
+        "........",  # y=-2
+        "........",  # y=-3
+    ]),
+
+    # ========= Greek / mathematical symbols =========
+    ("pi", 0x03C0, [  # π
+        "........",  # y=11
+        "........",  # y=10
+        "........",  # y=9
+        "........",  # y=8
+        "........",  # y=7
+        ".######.",  # y=6   top bar
+        "..#..#..",  # y=5   legs
+        "..#..#..",  # y=4
+        "..#..#..",  # y=3
+        "..#..#..",  # y=2
+        "..#..#..",  # y=1
+        ".##..##.",  # y=0   feet on baseline
+        "........",  # y=-1
+        "........",  # y=-2
+        "........",  # y=-3
+    ]),
+    ("approxequal", 0x2248, [  # ≈
+        "........",  # y=11
+        "........",  # y=10
+        "........",  # y=9
+        "........",  # y=8
+        "........",  # y=7
+        "..##..#.",  # y=6   upper wave
+        ".#..##..",  # y=5
+        "........",  # y=4
+        "..##..#.",  # y=3   lower wave
+        ".#..##..",  # y=2
+        "........",  # y=1
+        "........",  # y=0
+        "........",  # y=-1
+        "........",  # y=-2
+        "........",  # y=-3
+    ]),
+    ("lessequal", 0x2264, [  # ≤
+        "........",  # y=11
+        "........",  # y=10
+        "........",  # y=9
+        ".....##.",  # y=8   upper stroke
+        "...##...",  # y=7
+        ".##.....",  # y=6
+        "#.......",  # y=5   point
+        ".##.....",  # y=4
+        "...##...",  # y=3
+        ".....##.",  # y=2   lower stroke
+        "........",  # y=1
+        "#######.",  # y=0   baseline bar
+        "........",  # y=-1
+        "........",  # y=-2
+        "........",  # y=-3
+    ]),
+    ("greaterequal", 0x2265, [  # ≥
+        "........",  # y=11
+        "........",  # y=10
+        "........",  # y=9
+        "##......",  # y=8   upper stroke
+        "..##....",  # y=7
+        "....##..",  # y=6
+        "......#.",  # y=5   point
+        "....##..",  # y=4
+        "..##....",  # y=3
+        "##......",  # y=2   lower stroke
+        "........",  # y=1
+        "#######.",  # y=0   baseline bar
+        "........",  # y=-1
+        "........",  # y=-2
+        "........",  # y=-3
+    ]),
+    ("boxplus", 0x229E, [  # ⊞
+        "........",  # y=11
+        "........",  # y=10
+        "........",  # y=9
+        "........",  # y=8
+        "#######.",  # y=7   square border
+        "#.....#.",  # y=6   plus vertical
+        "#..#..#.",  # y=5
+        "#.###.#.",  # y=4   plus horizontal
+        "#..#..#.",  # y=3
+        "#.....#.",  # y=2
+        "#######.",  # y=1
+        "........",  # y=0
+        "........",  # y=-1
+        "........",  # y=-2
+        "........",  # y=-3
+    ]),
+    ("boxminus", 0x229F, [  # ⊟
+        "........",  # y=11
+        "........",  # y=10
+        "........",  # y=9
+        "........",  # y=8
+        "#######.",  # y=7   square border
+        "#.....#.",  # y=6
+        "#.....#.",  # y=5
+        "#.###.#.",  # y=4   minus stroke
+        "#.....#.",  # y=3
+        "#.....#.",  # y=2
+        "#######.",  # y=1
+        "........",  # y=0
+        "........",  # y=-1
+        "........",  # y=-2
+        "........",  # y=-3
+    ]),
+    ("boxtimes", 0x22A0, [  # ⊠
+        "........",  # y=11
+        "........",  # y=10
+        "........",  # y=9
+        "........",  # y=8
+        "#######.",  # y=7   square border
+        "#.....#.",  # y=6   times diagonals
+        "#.#.#.#.",  # y=5
+        "#..#..#.",  # y=4
+        "#.#.#.#.",  # y=3
+        "#.....#.",  # y=2
+        "#######.",  # y=1
+        "........",  # y=0
+        "........",  # y=-1
+        "........",  # y=-2
+        "........",  # y=-3
+    ]),
+    ("boxdot", 0x22A1, [  # ⊡
+        "........",  # y=11
+        "........",  # y=10
+        "........",  # y=9
+        "........",  # y=8
+        "#######.",  # y=7   square border
+        "#.....#.",  # y=6
+        "#.....#.",  # y=5
+        "#..#..#.",  # y=4   center dot
+        "#.....#.",  # y=3
+        "#.....#.",  # y=2
+        "#######.",  # y=1
         "........",  # y=0
         "........",  # y=-1
         "........",  # y=-2
@@ -805,7 +943,7 @@ def format_row(row8: str, y: int) -> str:
 
 def emit() -> None:
     out: list[str] = []
-    out.append("# Ohlfs glyph extras — arrows, geometric shapes, block elements.")
+    out.append("# Ohlfs glyph extras — arrows, Greek/math symbols, geometric shapes, block elements.")
     out.append("# Same format as glyphs.txt: 22-char rows × 16 rows, '##' = on, '..' = off.")
     out.append("# These are designed for adv=800 (8-px cell) and use cols 0..7.")
     out.append("")
