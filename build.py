@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Build Ohlfs-Extra.otf and Ohlfs-Extra-Bold.otf.
+"""Build Ohlfs-Extra.otf, Ohlfs-Extra-Bold.otf, Ohlfs-Extra-Italic.otf,
+and Ohlfs-Extra-Bold-Italic.otf.
 
 Pipeline:
 
@@ -10,6 +11,9 @@ Pipeline:
   3. Re-load Ohlfs-Extra.otf and run the standard 1-px bold smear over every
      glyph (originals + extras), rename to "Ohlfs Extra Bold", write
      Ohlfs-Extra-Bold.otf.
+  4. Re-load Ohlfs-Extra.otf, apply bitmap skew, write Ohlfs-Extra-Italic.otf.
+  5. Re-load Ohlfs-Extra.otf, apply bitmap skew + bold smear,
+     write Ohlfs-Extra-Bold-Italic.otf.
 """
 from __future__ import annotations
 
@@ -29,6 +33,7 @@ from make_bold import (
     strip_legacy_bitmap_tables,
     update_cff_top,
 )
+from make_italic import bold_italic_otf, italic_otf
 
 ROOT = Path(__file__).resolve().parent
 SRC = Path("/Users/jason/Library/Fonts/Ohlfs-Light.otf")
@@ -37,6 +42,8 @@ EXTRA_FILES = [
 ]
 DST_REGULAR = ROOT / "Ohlfs-Extra.otf"
 DST_BOLD = ROOT / "Ohlfs-Extra-Bold.otf"
+DST_ITALIC = ROOT / "Ohlfs-Extra-Italic.otf"
+DST_BOLD_ITALIC = ROOT / "Ohlfs-Extra-Bold-Italic.otf"
 
 DEFAULT_ADV = 800
 
@@ -209,7 +216,7 @@ def build_extra_regular() -> Path:
 
 
 def build_extra_bold(src: Path) -> Path:
-    print(f"[2/2] Building {DST_BOLD.name}")
+    print(f"[2/4] Building {DST_BOLD.name}")
     bold_otf(
         src=src,
         dst=DST_BOLD,
@@ -221,9 +228,37 @@ def build_extra_bold(src: Path) -> Path:
     return DST_BOLD
 
 
+def build_extra_italic(src: Path) -> Path:
+    print(f"[3/4] Building {DST_ITALIC.name}")
+    italic_otf(
+        src=src,
+        dst=DST_ITALIC,
+        family="Ohlfs Extra",
+        subfamily="Italic",
+        full="Ohlfs Extra Italic",
+        ps_name="OhlfsExtra-Italic",
+    )
+    return DST_ITALIC
+
+
+def build_extra_bold_italic(src: Path) -> Path:
+    print(f"[4/4] Building {DST_BOLD_ITALIC.name}")
+    bold_italic_otf(
+        src=src,
+        dst=DST_BOLD_ITALIC,
+        family="Ohlfs Extra",
+        subfamily="Bold Italic",
+        full="Ohlfs Extra Bold Italic",
+        ps_name="OhlfsExtra-BoldItalic",
+    )
+    return DST_BOLD_ITALIC
+
+
 def main() -> None:
     regular = build_extra_regular()
     build_extra_bold(regular)
+    build_extra_italic(regular)
+    build_extra_bold_italic(regular)
 
 
 if __name__ == "__main__":
